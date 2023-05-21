@@ -1,13 +1,10 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from .views import (
-    UserViewSet,
-    get_jwt_token,
-    get_or_update_account_details,
-    send_confirmation_code,
-)
-
+from .views import (get_jwt_token,
+                    get_or_update_account_details,
+                    send_confirmation_code,
+                    UserViewSet,)
 
 users_v1_router = DefaultRouter()
 users_v1_router.register(r"users", UserViewSet, basename="user")
