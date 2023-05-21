@@ -1,0 +1,94 @@
+@test_user3 = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5ODgzNDA5LCJqdGkiOiJmODA3ODM4MGVmYzk0NDkyODJiMzBmY2U0Y2ZiYWFjMyIsInVzZXJfaWQiOjEwNn0.6zkZzdm9GMGqbe94T_RbcQGkdSq7ycmrMcwsWCBTY3U
+@admin_token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5NDYxNjA3LCJqdGkiOiI2Y2I0ODY2YWNjNjc0MjJmOTBiZjQ1ZWEzZjJmZmM3ZSIsInVzZXJfaWQiOjExfQ.kmrFCwSIRGu5-u_gUx4p2GZIPYMlJnzrkVh76a7Alik
+######################################################## /api/v1/jwt/create/
+
+POST http://127.0.0.1:8000/api/v1/auth/signup/
+Content-Type: application/json
+
+{
+    "email":    "testuser3@testuser.ru",
+    "username": "test_user3"
+}
+
+########################################################
+
+POST http://127.0.0.1:8000/api/v1/auth/token/
+Content-Type: application/json
+
+{
+    "confirmation_code": "665-e4e092908ceed790336a",
+    "username": "test_user3"
+}
+
+########################################################
+
+GET http://127.0.0.1:8000/api/v1/users/me/
+Content-Type: application/json
+Authorization: Bearer {{test_user_001_token}}
+
+###
+PATCH  http://127.0.0.1:8000/api/v1/users/me/
+Content-Type: application/json
+Authorization: Bearer {{test_user_001_token}}
+
+{   
+    "username": "test_user_001",
+    "role": "moderator"
+}
+
+########################################################
+
+GET http://127.0.0.1:8000/api/v1/users/test_user_001/
+Content-Type: application/json
+Authorization: Bearer {{admin_token}}
+
+###
+
+PATCH http://127.0.0.1:8000/api/v1/users/test_user_001/
+Content-Type: application/json
+Authorization: Bearer {{admin_token}}
+
+{
+    "username": "test_user_001",
+    "email": "test_user_001@ya.ru",
+    "role": "user"
+}
+
+###
+
+DELETE http://127.0.0.1:8000/api/v1/users/test_user_003/
+Content-Type: application/json
+Authorization: Bearer {{admin_token}}
+
+########################################################
+
+GET http://127.0.0.1:8000/api/v1/users/
+Content-Type: application/json
+Authorization: Bearer {{admin_token}}
+###
+
+GET http://127.0.0.1:8000/api/v1/users/?search=adm
+Content-Type: application/json
+Authorization: Bearer {{admin_token}}
+
+### anon
+
+GET http://127.0.0.1:8000/api/v1/users/
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8000/api/v1/users/
+Content-Type: application/json
+Authorization: Bearer {{admin_token}}
+
+{
+    "username": "test_user_003",
+    "email": "test_user_003@ya.ru"
+}
+
+########################################################
+
+GET http://127.0.0.1:8000/api/v1/titles/3/
+Content-Type: application/json
+Authorization: Bearer {{test_user3}}
