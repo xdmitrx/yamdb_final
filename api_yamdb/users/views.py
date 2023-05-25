@@ -4,12 +4,12 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 
-from api_yamdb.users.permissions import IsAdminRoleOrSuperUser
-from api_yamdb.users.serializers import (AccountDetailsSerializer,
-                                         ConfirmationCodeSerializer,
-                                         RegistratingUserSerializer,
-                                         UserSerializer,)
-
+from .permissions import IsAdminRoleOrSuperUser
+from .serializers import (AccountDetailsSerializer,
+                          ConfirmationCodeSerializer,
+                          RegistratingUserSerializer,
+                          UserSerializer,
+                          )
 from .services import get_access_token_for_user
 
 User = get_user_model()
