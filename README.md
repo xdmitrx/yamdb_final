@@ -66,3 +66,7 @@ DB_PORT=5432
 Документация доступна по эндпойнту: http://localhost/redoc/
 
 Автор: Беликов Дмитрий https://github.com/xdmitrx
+
+Проект: https://github.com/xdmitrx/yamdb_final.git
+
+Проект доступен по адресу: (http://158.160.62.45/) (if you got lucky).
