@@ -11,9 +11,9 @@ SECRET_KEY = (
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost',
+ALLOWED_HOSTS = ['51.250.69.189',
+                 'localhost',
                  '127.0.0.1',
-                 '51.250.69.189'
                  ]
 
 
