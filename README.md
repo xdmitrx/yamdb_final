@@ -69,4 +69,4 @@ DB_PORT=5432
 
 Проект: https://github.com/xdmitrx/yamdb_final.git
 
-Проект доступен по адресу: (http://158.160.62.45/) (if you got lucky).
+Проект доступен по адресу: (http://51.250.69.189/) (if you got lucky).
