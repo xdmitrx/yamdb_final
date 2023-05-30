@@ -11,10 +11,12 @@ SECRET_KEY = (
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['51.250.69.189',
-                 'localhost',
-                 '127.0.0.1',
-                 ]
+# ALLOWED_HOSTS = ['51.250.69.189',
+#                  'localhost',
+#                  '127.0.0.1',
+#                  ]
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
