@@ -1,7 +1,6 @@
 import os
 from datetime import timedelta
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -9,17 +8,14 @@ SECRET_KEY = (
     os.getenv('SECRET_KEY'),
     'my_mega_secret_code_ilz@4zqj=rq&agdol^##zgl9(vs')
 
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS = ['51.250.69.189',
-#                  'localhost',
-#                  '127.0.0.1',
-#                  ]
+ALLOWED_HOSTS = ['51.250.69.189',
+                 'localhost',
+                 '127.0.0.1',
+                 'web:8000',
+                 ]
 
-ALLOWED_HOSTS = ['*']
-
-
-# Application definition
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -68,8 +64,6 @@ TEMPLATES = [
 WSGI_APPLICATION = "api_yamdb.wsgi.application"
 
 
-# Database
-
 DATABASES = {
     "default": {
         "ENGINE": os.getenv("DB_ENGINE", "django.db.backends.postgresql"),
@@ -81,15 +75,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-
-# Password validation
 
 AUTH_PASSWORD_VALIDATORS = [
     {
