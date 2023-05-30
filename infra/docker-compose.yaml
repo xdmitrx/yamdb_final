@@ -9,7 +9,7 @@ services:
       - ./.env
   web:
     image: xdimx/api_yamdb
-    platform: linux/amd64
+    # platform: linux/amd64
     restart: always
     volumes:
       - static_value:/app/static/
