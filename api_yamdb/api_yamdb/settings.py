@@ -9,7 +9,7 @@ SECRET_KEY = (
     os.getenv('SECRET_KEY'),
     'my_mega_secret_code_ilz@4zqj=rq&agdol^##zgl9(vs')
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['51.250.69.189',
                  'localhost',
